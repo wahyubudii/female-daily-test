@@ -8,7 +8,7 @@ export default function EditorChoice({props}:any) {
     return (
         <div className="py-8 container mx-auto">
             <div className="lg:mx-28 pb-10">
-                <h3 className='font-bold text-xl'>Editor's Choice</h3>
+                <h3 className='font-bold text-xl'>Editor&apos;s Choice</h3>
                 <p className='text-gray-400'>Curated with love</p>
                 <div className="grid lg:grid-cols-4 xl:grid-cols-5 gap-5">
                     {editorChoice.map((val:any, index:number) => {
