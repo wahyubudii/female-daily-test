@@ -26,7 +26,7 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className="mt-10 flex flex-col">
-                            <Link href={officialWeb} target={'_blank'}><img className='h-5' src="/images/logo/female-network.svg" alt="" /></Link> 
+                            <Link href={officialWeb} target={'_blank'}><Image src="/images/logo/female-network.svg" alt="logo" width={100} height={24} /></Link> 
                             <p className='mt-3 text-xs text-gray-400 font-medium'>Copyright <span className='after:content-["©"]'></span> 2015 - 2017 Female Daily Network <span className='after:content-["•"]'></span> All rights reserved</p>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ export default function Footer() {
                                 )
                             })}
                         </div>
-                        <div className="mt-12 flex items-center space-x-5">
+                        <div className="mt-12 flex space-x-5">
                             {socialMedia.map((val:any, index:number) => {
                                 return (
                                     <Link key={index} href={val.url} target={"_blank"} className='h-7 w-7 rounded-full bg-slate-200 flex'><img src={`/images/socialMedia/${val.name}.svg`} alt="media-social" /></Link>

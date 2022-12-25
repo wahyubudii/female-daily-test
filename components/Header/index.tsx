@@ -3,6 +3,7 @@ import { GrMenu } from 'react-icons/gr'
 import { RiAccountCircleLine, RiSearchLine } from 'react-icons/ri' 
 import Link from 'next/link'
 import { officialWeb, userAccounts } from '../../utils/resources'
+import Image from 'next/image'
 
 export default function Header() {
     return (
@@ -11,7 +12,7 @@ export default function Header() {
                 <div className='flex items-center justify-between'>
                     <div className="flex items-center">
                         <GrMenu />
-                        <Link className='ml-3' href={officialWeb} target={'_blank'}><img src="/images/logo/female-network.svg" alt="" /></Link>
+                        <Link className='ml-3' href={officialWeb} target={'_blank'}><Image className='w-44' src="/images/logo/female-network.svg" alt="logo" width={100} height={24} /></Link>
                     </div>
                     <div className='w-full px-6'>
                         <div className='border border-gray-300 p-2 flex items-center justify-center'>
