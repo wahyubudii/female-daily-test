@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function InternalCampign() {
   return (
     <div className="sm:py-8 lg:py-12 container mx-auto">

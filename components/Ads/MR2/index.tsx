@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function MR2() {
   return (
     <div className='sm:mt-20 flex sm:justify-center sm:items-center lg:justify-end lg:items-end'>

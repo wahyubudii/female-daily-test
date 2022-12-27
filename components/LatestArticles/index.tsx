@@ -1,9 +1,16 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { getData, selectData } from '../../redux/reducer/dataSlice';
 
-export default function LatestArticles({props}:any) {
-    const [latestArticles, setLatestArticles] = useState(props["latest articles"])
+export default function LatestArticles() {
+    const dispatch = useAppDispatch();
+    const { data, pending, error } = useAppSelector(selectData);
+
+    useEffect(() => {
+        dispatch(getData())
+    }, [dispatch])
 
     return (
         <div className="pb-10 container mx-auto">
@@ -19,7 +26,7 @@ export default function LatestArticles({props}:any) {
                 <div className="mt-6">
                     <div className='py-2 grid grid-cols-3 sm:gap-5 lg:gap-10'>
                         {/* MAIN ARTICLES */}
-                        {latestArticles.slice(0,4).map((val:any, index:number) => {
+                        {pending ? <p>Loading...</p> : data["latest articles"].slice(0,4).map((val:any, index:number) => {
                             return (
                                 <div key={index} className="hover:scale-105 transition hover:opacity-75">
                                     <div className='bg-center bg-cover bg-red-200 sm:h-32 xl:h-40 rounded-md' style={{backgroundImage: `url(${val.image})`}}></div>
@@ -32,7 +39,7 @@ export default function LatestArticles({props}:any) {
                             )
                         })}
                         {/* SPONSORED */}
-                        {latestArticles.slice(0,2).map((val:any, index:number) => {
+                        {pending ? <p>Loading...</p> : data["latest articles"].slice(0,2).map((val:any, index:number) => {
                             return (
                                 <div className='relative hover:scale-105 transition hover:opacity-75' key={index}>
                                     <div className='bg-center bg-cover bg-red-200 sm:h-32 xl:h-40 rounded-md' style={{backgroundImage: `url(${val.image})`}}></div>
@@ -47,6 +54,7 @@ export default function LatestArticles({props}:any) {
                                 </div>
                             )
                         })}
+                        {/* {error && <p>Oops, something went wrong</p>} */}
                     </div>
                 </div>
             </div>

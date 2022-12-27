@@ -13,6 +13,8 @@ export const socialMedia = [
     {name: "youtube", url: "https://www.youtube.com/user/FemaleDailyNetwork"},
 ]
 
+export const dummyPhoto = "https://image.femaledaily.com/dyn/80/images/user-pics/8cfa98979828b03949df998669bcca01.jpg"
+
 export const youtubeVideo = ["RkMeGPClvTo", "FoPlWJCw-o8"]
 
 export const navItems = ["skincare", "make-up", "body", "hair", "fragrance", "nails", "tools", "brands"]

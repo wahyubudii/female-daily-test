@@ -1,9 +1,16 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import { useEffect } from "react";
 import ReactStars from "react-stars";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { getData, selectData } from "../../redux/reducer/dataSlice";
 
-export default function MatchSkin({ props }: any) {
-  const [editorChoice, setSeditorChoise] = useState(props["editor's choice"]);
+export default function MatchSkin() {
+  const dispatch = useAppDispatch();
+  const { data, pending, error } = useAppSelector(selectData);
+
+  useEffect(() => {
+    dispatch(getData())
+  }, [dispatch])
 
   return (
     <div className="container mx-auto sm:px-16 lg:px-28 bg-red-100">
@@ -23,7 +30,7 @@ export default function MatchSkin({ props }: any) {
           </div>
         </div>
         <div className="sm:pt-10 lg:pt-0 grid grid-cols-3 gap-5">
-          {editorChoice.slice(0, 3).map((val: any, index: number) => {
+          {pending ? <p>Loading...</p> : data["editor's choice"].slice(0, 3).map((val: any, index: number) => {
             return (
               <div key={index} className="bg-white rounded-lg hover:scale-105 transition">
                 <div className='px-4 py-2 w-auto'>
@@ -43,6 +50,7 @@ export default function MatchSkin({ props }: any) {
               </div>
             );
           })}
+          {/* {error && <p>Oops, something went wrong</p>} */}
         </div>
       </div>
     </div>

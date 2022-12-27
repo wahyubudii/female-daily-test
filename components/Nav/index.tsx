@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { navItems } from '../../utils/resources'
 
 export default function Nav() {

@@ -1,12 +1,19 @@
-import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
 import ReactStars from 'react-stars'
 import MR2 from '../Ads/MR2'
 import Link from 'next/link'
+import { getData, selectData } from '../../redux/reducer/dataSlice'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks'
+import { dummyPhoto } from '../../utils/resources'
 
-export default function LatestReviews({props}:any) {
-    const [latestReviews, setLatestReviews] = useState(props["latest review"])
-    const editorPhoto = "https://image.femaledaily.com/dyn/80/images/user-pics/8cfa98979828b03949df998669bcca01.jpg"
+export default function LatestReviews() {
+    const dispatch = useAppDispatch();
+    const { data, pending, error } = useAppSelector(selectData);
+
+    useEffect(() => {
+        dispatch(getData())
+    }, [dispatch])
     
     return (
         <div className="pb-14 container mx-auto">
@@ -21,7 +28,7 @@ export default function LatestReviews({props}:any) {
                         </Link>
                     </div>
                     <div className="mt-5 grid grid-cols-2 lg:gap-4 sm:gap-5 xl:gap-10">
-                        {latestReviews.slice(0,2).map((val:any, index:number) => {
+                        {pending ? <p>Loading...</p> : data["latest review"].slice(0,2).map((val:any, index:number) => {
                             return (
                                 <div key={index} className='relative border border-slate-200 p-4 rounded-lg'>
                                     <div className='flex items-start justify-evenly'>
@@ -37,13 +44,14 @@ export default function LatestReviews({props}:any) {
                                     </div>
                                     <div className='line-clamp-4 sm:text-xs xl:text-base text-slate-600 mb-4'>{val.comment}</div>
                                     <div className="flex flex-col items-center w-full justify-center absolute -bottom-24 2xl:-bottom-28 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                        <div className="h-9 w-9 2xl:h-12 2xl:w-12 rounded-full bg-cover bg-center" style={{backgroundImage: `url(${editorPhoto})`}}></div>
+                                        <div className="h-9 w-9 2xl:h-12 2xl:w-12 rounded-full bg-cover bg-center" style={{backgroundImage: `url(${dummyPhoto})`}}></div>
                                         <p className='pt-[8px] capitalize text-gray-600 sm:text-xs lg:text-sm xl:text-base'>{val.user}</p>
                                         <p className='text-gray-500 sm:text-[9px] lg:text-[10px] xl:text-[12px]'>{"Combination Skin, " + val.profile.slice(-1)}</p>
                                     </div>
                                 </div>
                             )
                         })}
+                        {/* {error && <p>Oops, something went wrong</p>} */}
                     </div>
                 </div>
                 <MR2 />

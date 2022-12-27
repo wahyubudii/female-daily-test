@@ -1,4 +1,3 @@
-import React from 'react'
 import { GrMenu } from 'react-icons/gr'
 import { RiAccountCircleLine, RiSearchLine } from 'react-icons/ri' 
 import Link from 'next/link'
