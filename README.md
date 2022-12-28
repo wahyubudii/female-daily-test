@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
-
+First, clone this project on your local directory:
+```bash
+git clone https://github.com/wahyubudii/female-daily-test
+```
+Second, Open the clone project result:
+```bash
+cd female-daily-test
+```
+Third, install all libraries:
+```bash
+npm install
+# or
+yarn install
+```
+Fourth, run the project on your localhost:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fifth (Optional), run the unit testing:
+```bash
+npm run test || npm t
+# or
+yarn test || yarn t
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## About Framework and Library
+- Next JS
+- Axios
+- Redux
+- Jest & React Testing Library
+- Typescript
+- Tailwind CSS
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Result of the unit testing
+![image](https://user-images.githubusercontent.com/79882296/209862667-02938550-f7e6-473d-ba15-048ac48a8b96.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Page Result
+- 1280px
+![image](https://user-images.githubusercontent.com/79882296/209862887-829228a7-c09f-49fe-86ca-c9f20e3bdda8.png)
 
-## Learn More
+- 1080px
+![image](https://user-images.githubusercontent.com/79882296/209862948-42502bb9-ba8b-485a-82ac-7f285da1eb65.png)
 
-To learn more about Next.js, take a look at the following resources:
+- 768px
+![image](https://user-images.githubusercontent.com/79882296/209862987-9947893f-34f5-46d9-b212-cbdfb7371d94.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 640px
+![image](https://user-images.githubusercontent.com/79882296/209863028-7e0c9779-0c19-4c9b-904f-7303858f7317.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployed on Vercel
+https://female-daily-wahyubudii.vercel.app/
