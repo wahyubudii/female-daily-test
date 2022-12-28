@@ -35,14 +35,14 @@ export default function Footer() {
                         <div className='mt-3 flex items-center justify-start gap-5'>
                             {stores.map((val:any, index:number) => {
                                 return (
-                                    <Link key={index} href={val.url} target={"_blank"}><Image src={`/images/store/${val.name}.png`} alt="stores" className='w-44 m-auto' width={100} height={24} /></Link>
+                                    <Link data-testid="mobile-store" key={index} href={val.url} target={"_blank"}><Image src={`/images/store/${val.name}.png`} alt="stores" className='w-44 m-auto' width={100} height={24} /></Link>
                                 )
                             })}
                         </div>
                         <div className="sm:mt-8 lg:mt-12 flex space-x-5">
                             {socialMedia.map((val:any, index:number) => {
                                 return (
-                                    <Link key={index} href={val.url} target={"_blank"} className='h-7 w-7 rounded-full bg-slate-200 flex'><Image src={`/images/socialMedia/${val.name}.svg`} alt="social-media" width={100} height={24} /></Link>
+                                    <Link data-testid="social-media" key={index} href={val.url} target={"_blank"} className='h-7 w-7 rounded-full bg-slate-200 flex'><Image src={`/images/socialMedia/${val.name}.svg`} alt="social-media" width={100} height={24} /></Link>
                                 )
                             })}
                         </div>

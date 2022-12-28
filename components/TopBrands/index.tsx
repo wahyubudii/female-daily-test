@@ -19,7 +19,7 @@ export default function TopBrands() {
                 <div className="mt-8 grid grid-cols-6 sm:gap-3 lg:gap-5 flex">
                     {brands.map((val:string, index:number) => {
                         return (
-                            <Image key={index} src={`/images/brands/${val}.png`} alt="brands" className='w-fit sm:h-10 lg:h-16 m-auto' width={100} height={24} />
+                            <Image data-testid="brand-images" key={index} src={`/images/brands/${val}.png`} alt="brands" className='w-fit sm:h-10 lg:h-16 m-auto' width={100} height={24} />
                         )
                     })}
                 </div>
